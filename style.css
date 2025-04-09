@@ -17,6 +17,9 @@ ul {
     width: 1440px;
     height: 1024px;
     background-color: #eff2f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -25,26 +28,49 @@ ul {
     box-shadow: 20px 20px 40px 0 rgba(81, 91, 117, 0.25);
     background-color: #fff; 
     padding: 60px 0 70px;
+    display: flex;
 }
 
 .images-block {
     border-right: 2px solid rgba(20, 20, 20, 0.15);
-    width: 540px;
+    min-width: 540px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
 }
 
 .preview {
     width: 80px;
     height: 80px;
     background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.selected{
-    box-shadow: 8px 8px 16px 0 rgba(81, 91, 117, 0.25);
-
+.preview:hover,
+.selected {
+    box-shadow: 8px 8px 16px 0px rgba(81, 91, 117, 0.25);
 }
 
 .info-block {
     padding: 0 60px;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -84,6 +110,12 @@ h1 {
     margin-bottom: 20px;
 }
 
+.color-items {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
 .circle {
     width: 16px;
     height: 16px;
@@ -111,6 +143,20 @@ h1 {
     background-color: #f2c723;
 }
 
+.color-items > li {
+    width: 30px;
+    height: 30px;
+    padding: 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .color-items > li:hover,
+  .color-items > li.selected {
+    box-shadow: 2px 2px 6px 0px rgba(81, 91, 117, 0.25);
+  } 
+
 li.selected {
     border-radius: 100%;
     fill: #fff;
@@ -120,7 +166,16 @@ li.selected {
     padding: 7px;
 }
 
+.wrapper {
+    display: flex;
+}
+
+.wrapper > div {
+    flex-grow: 1;
+  }
+
 .quantity {
+    font-family: inherit;
     width: 80px;
     height: 24px;
     border: none;
@@ -133,6 +188,7 @@ li.selected {
     background-image: url(./asset/images/image4.svg);
     background-repeat: no-repeat;
     background-position: right 0 top 50%;
+    cursor: pointer;
 }
 
 .price {
@@ -153,4 +209,10 @@ li.selected {
     letter-spacing: 0.01em;
     color: #fff;
     margin-top: 75px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
 }
